@@ -180,9 +180,9 @@ public class ConditionalResponseInterceptor implements
 		} else if (request.getMethod().equals(PUT)) {
 			postHandlePut(request, response);
 		} else if (request.getMethod().equals(DELETE)) {
-			postHandleDelete(request, response);
+			postHandleDelete(request);
 		} else if (request.getMethod().equals(POST)) {
-			postHandlePost(request, response);
+			postHandlePost(request);
 		} 
 		
 	}
@@ -241,8 +241,7 @@ public class ConditionalResponseInterceptor implements
 	 * @param request
 	 * @param response
 	 */
-	private void postHandleDelete(HttpServletRequest request,
-			HttpServletResponse response) {
+	private void postHandleDelete(HttpServletRequest request) {
 		
 		service.evictAll(getUri(request));
 		
@@ -262,8 +261,7 @@ public class ConditionalResponseInterceptor implements
 	 * @param request
 	 * @param response
 	 */
-	private void postHandlePost(HttpServletRequest request,
-			HttpServletResponse response) {
+	private void postHandlePost(HttpServletRequest request) {
 		
 		service.evictAll(getUri(request));
 		
