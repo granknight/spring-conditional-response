@@ -53,7 +53,7 @@ import org.springframework.web.servlet.ModelAndView;
  * is updated and all previous ETags are evicted.
  * 
  * POST: Removes the ETag for the {@link URI}
- * after the POST has occured.
+ * after the POST has occurred.
  * 
  * @author patrickvk
  *
