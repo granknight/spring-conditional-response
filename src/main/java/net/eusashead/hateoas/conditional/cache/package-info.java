@@ -1,13 +1,14 @@
 /**
- * Contains core HandlerInterceptor classes
- * to implement conditional GET, HEAD, PUT,
- * DELETE and POST behaviours
+ * The CacheService interface
+ * that may be used in a future
+ * version of the ConditionalResponseHandlerInterceptor
+ * to cache entire HttpServletResponse instances.
  */
 /**
  * @author patrickvk
  *
  */
-package net.eusashead.hateoas.conditional.interceptor;
+package net.eusashead.hateoas.conditional.cache;
 
 /*
  * #[license]

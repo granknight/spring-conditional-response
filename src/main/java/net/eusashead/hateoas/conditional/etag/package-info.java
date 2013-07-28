@@ -1,13 +1,14 @@
 /**
- * Contains core HandlerInterceptor classes
- * to implement conditional GET, HEAD, PUT,
- * DELETE and POST behaviours
+ * The ETagService and ETagRepository
+ * interfaces and associated classes
+ * used for storing ETag values between
+ * requests in the ConditionalResponseHandlerInterceptor
  */
 /**
  * @author patrickvk
  *
  */
-package net.eusashead.hateoas.conditional.interceptor;
+package net.eusashead.hateoas.conditional.etag;
 
 /*
  * #[license]
