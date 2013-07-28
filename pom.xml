@@ -10,7 +10,7 @@
 	<groupId>net.eusashead.hateoas</groupId>
 	<artifactId>spring-conditional-response</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1.0-SNAPSHOT</version>
+	<version>1.0.1.RELEASE-SNAPSHOT</version>
 	<name>spring-conditional-response</name>
 	<description>Library for handling conditional GET, PUT and DELETE requests based on ETag headers in a non-intrusive way.</description>
 	<url>https://github.com/patrickvankann/spring-conditional-response</url>
