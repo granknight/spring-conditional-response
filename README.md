@@ -44,3 +44,32 @@ Methods which modify the resource (e.g. by PUT, DELETE or POST) need to invalida
 It's important to note that such a modification will flush the ETags stored for ALL query string variants of a resource, since they are all potentially invalidated by the update.
 
 So a PUT to /customer/1234 would remove ETags stored for URIs /customer/1234 as well as /customer/1234?view=full.
+
+##Configuration
+To use the `ConditionalResponseInterceptor`, register it in your Spring config as below.
+
+    @Configuration
+    @ComponentScan(basePackageClasses=SyncTestController.class)
+    public class WebConfig extends WebMvcConfigurationSupport {
+	
+	    @Override
+	    protected void addInterceptors(InterceptorRegistry registry) {
+		    registry.addInterceptor(new ConditionalResponseInterceptor(eTagService()));
+		    super.addInterceptors(registry);
+	    }
+
+	    @Bean
+	    public ETagService eTagService() {
+		    return new ETagServiceImpl(new ConcurrentMapPathETagRepository());
+	    }
+
+    }
+
+##Downloading
+It is available in the Sonatype repository on these coordinates. Look in Github [Releases](https://github.com/patrickvankann/spring-conditional-response/releases) to see the latest version number.
+
+    <dependency>
+        <groupId>net.eusashead.hateoas</groupId>
+        <artifactId>spring-spring-conditional-response</artifactId>
+        <version>${version}</version>
+    </dependency>
