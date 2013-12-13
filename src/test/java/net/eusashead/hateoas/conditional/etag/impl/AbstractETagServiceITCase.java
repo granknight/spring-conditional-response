@@ -28,27 +28,18 @@ import net.eusashead.hateoas.conditional.etag.ETagService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
-@RunWith(JUnit4.class)
-public class ETagServiceImplTest {
+public abstract class AbstractETagServiceITCase {
 	
 	private ETagService service;
 	
+	public abstract ETagService build() throws Exception;
+	
 	@Before
-	public void before() {
-		service = new ETagServiceImpl(new ConcurrentMapPathETagRepository());
+	public void before() throws Exception {
+		service = build();
 	}
 	
-	@Test
-	public void testUriParse() throws URISyntaxException {
-		String uriString = "/path/to/thing/?query=foo&thing=stuff";
-		URI uri = new URI(uriString);
-		Assert.assertEquals("/path/to/thing/", uri.getPath());
-		Assert.assertEquals("query=foo&thing=stuff", uri.getQuery());
-	}
-
 	@Test
 	public void testStoreAndGetQuery() throws URISyntaxException {
 		URI uri = new URI("/path/to/thing/?query=foo&thing=stuff");

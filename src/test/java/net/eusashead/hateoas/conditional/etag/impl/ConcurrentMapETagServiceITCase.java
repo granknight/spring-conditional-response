@@ -1,4 +1,4 @@
-package net.eusashead.hateoas.conditional.etag;
+package net.eusashead.hateoas.conditional.etag.impl;
 
 /*
  * #[license]
@@ -20,12 +20,16 @@ package net.eusashead.hateoas.conditional.etag;
  * %[license]
  */
 
-public interface PathETagRepository {
+import net.eusashead.hateoas.conditional.etag.ETagService;
 
-	PathETagMap get(String path);
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-	void store(String path, PathETagMap map);
-
-	void remove(String path);
-
+@RunWith(JUnit4.class)
+public class ConcurrentMapETagServiceITCase extends AbstractETagServiceITCase {
+	
+	public ETagService build() {
+		return new ConcurrentMapETagService();
+	}
+	
 }

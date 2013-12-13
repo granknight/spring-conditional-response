@@ -21,8 +21,7 @@ package net.eusashead.hateoas.conditional.interceptor;
  */
 
 import net.eusashead.hateoas.conditional.etag.ETagService;
-import net.eusashead.hateoas.conditional.etag.impl.ConcurrentMapPathETagRepository;
-import net.eusashead.hateoas.conditional.etag.impl.ETagServiceImpl;
+import net.eusashead.hateoas.conditional.etag.impl.ConcurrentMapETagService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -43,7 +42,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
 	
 	@Bean
 	public ETagService eTagService() {
-		return new ETagServiceImpl(new ConcurrentMapPathETagRepository());
+		return new ConcurrentMapETagService();
 	}
 
 }

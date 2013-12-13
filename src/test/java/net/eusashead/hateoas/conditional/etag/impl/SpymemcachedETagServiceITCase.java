@@ -20,22 +20,23 @@ package net.eusashead.hateoas.conditional.etag.impl;
  * %[license]
  */
 
-import java.net.URI;
+import java.io.IOException;
 
 import net.eusashead.hateoas.conditional.etag.ETagService;
+import net.spy.memcached.AddrUtil;
+import net.spy.memcached.MemcachedClient;
 
-public abstract class ETagServiceImpl implements ETagService {
-	
-	protected void assertURI(URI uri) {
-		if (uri.getPath() == null) {
-			throw new IllegalArgumentException("You must provide a path in the URI.");
-		}
-		
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class SpymemcachedETagServiceITCase extends AbstractETagServiceITCase {
+
+	public ETagService build() throws IOException {
+		MemcachedClient c = new MemcachedClient(
+		        AddrUtil.getAddresses("localhost:11211"));
+		return new SpymemcachedETagService(c);
 	}
 	
-	protected String getQuery(URI uri) {
-		String query = uri.getQuery() != null ? uri.getQuery() : "";
-		return query;
-	}
 	
 }
