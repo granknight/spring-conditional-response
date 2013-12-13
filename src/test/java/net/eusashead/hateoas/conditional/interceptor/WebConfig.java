@@ -20,8 +20,8 @@ package net.eusashead.hateoas.conditional.interceptor;
  * %[license]
  */
 
-import net.eusashead.hateoas.conditional.etag.ETagService;
-import net.eusashead.hateoas.conditional.etag.impl.ConcurrentMapETagService;
+import net.eusashead.hateoas.conditional.service.ETagService;
+import net.eusashead.hateoas.conditional.service.impl.ConcurrentMapETagService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

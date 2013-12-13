@@ -23,7 +23,7 @@ package net.eusashead.hateoas.conditional.etag.impl;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import net.eusashead.hateoas.conditional.etag.ETagService;
+import net.eusashead.hateoas.conditional.service.ETagService;
 
 import org.junit.Assert;
 import org.junit.Before;

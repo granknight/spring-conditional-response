@@ -1,4 +1,13 @@
-package net.eusashead.hateoas.conditional.etag.impl;
+/**
+ * Contains implementations of 
+ * the ETagService and ETagRepository
+ * implementations
+ */
+/**
+ * @author patrickvk
+ *
+ */
+package net.eusashead.hateoas.conditional.service.impl;
 
 /*
  * #[license]
@@ -19,23 +28,3 @@ package net.eusashead.hateoas.conditional.etag.impl;
  * limitations under the License.
  * %[license]
  */
-
-import java.net.URI;
-
-import net.eusashead.hateoas.conditional.etag.ETagService;
-
-public abstract class ETagServiceImpl implements ETagService {
-	
-	protected void assertURI(URI uri) {
-		if (uri.getPath() == null) {
-			throw new IllegalArgumentException("You must provide a path in the URI.");
-		}
-		
-	}
-	
-	protected String getQuery(URI uri) {
-		String query = uri.getQuery() != null ? uri.getQuery() : "";
-		return query;
-	}
-	
-}

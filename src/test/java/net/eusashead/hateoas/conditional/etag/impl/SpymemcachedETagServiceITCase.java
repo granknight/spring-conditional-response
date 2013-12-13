@@ -22,7 +22,8 @@ package net.eusashead.hateoas.conditional.etag.impl;
 
 import java.io.IOException;
 
-import net.eusashead.hateoas.conditional.etag.ETagService;
+import net.eusashead.hateoas.conditional.service.ETagService;
+import net.eusashead.hateoas.conditional.service.impl.SpymemcachedETagService;
 import net.spy.memcached.AddrUtil;
 import net.spy.memcached.MemcachedClient;
 

@@ -1,4 +1,4 @@
-package net.eusashead.hateoas.conditional.etag.impl;
+package net.eusashead.hateoas.conditional.service.impl;
 
 /*
  * #[license]
@@ -24,7 +24,7 @@ import java.net.URI;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import net.eusashead.hateoas.conditional.etag.ETagService;
+import net.eusashead.hateoas.conditional.service.ETagService;
 import net.spy.memcached.MemcachedClient;
 
 public class SpymemcachedETagService extends ETagServiceImpl implements ETagService {

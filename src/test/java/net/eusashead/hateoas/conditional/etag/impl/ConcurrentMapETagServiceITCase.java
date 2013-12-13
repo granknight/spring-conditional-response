@@ -20,7 +20,8 @@ package net.eusashead.hateoas.conditional.etag.impl;
  * %[license]
  */
 
-import net.eusashead.hateoas.conditional.etag.ETagService;
+import net.eusashead.hateoas.conditional.service.ETagService;
+import net.eusashead.hateoas.conditional.service.impl.ConcurrentMapETagService;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
