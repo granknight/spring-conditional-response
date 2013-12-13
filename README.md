@@ -1,4 +1,4 @@
-Spring Conditional Response
+Spring Conditional Response [![Build Status](https://travis-ci.org/patrickvankann/spring-conditional-response.png)](https://travis-ci.org/patrickvankann/spring-conditional-response)
 ===========================
 
 Spring `HandlerInterceptor` for handling conditional `GET`, `PUT` and `DELETE` requests based on ETag headers in a non-intrusive way.
