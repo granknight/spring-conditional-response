@@ -38,7 +38,7 @@ import java.net.URISyntaxException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.eusashead.hateoas.conditional.etag.ETagService;
+import net.eusashead.hateoas.conditional.service.ETagService;
 
 import org.junit.Assert;
 import org.junit.Before;

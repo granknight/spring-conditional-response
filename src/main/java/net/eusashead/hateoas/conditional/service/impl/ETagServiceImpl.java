@@ -1,4 +1,4 @@
-package net.eusashead.hateoas.conditional.etag;
+package net.eusashead.hateoas.conditional.service.impl;
 
 /*
  * #[license]
@@ -20,12 +20,22 @@ package net.eusashead.hateoas.conditional.etag;
  * %[license]
  */
 
-public interface PathETagRepository {
+import java.net.URI;
 
-	PathETagMap get(String path);
+import net.eusashead.hateoas.conditional.service.ETagService;
 
-	void store(String path, PathETagMap map);
-
-	void remove(String path);
-
+public abstract class ETagServiceImpl implements ETagService {
+	
+	protected void assertURI(URI uri) {
+		if (uri.getPath() == null) {
+			throw new IllegalArgumentException("You must provide a path in the URI.");
+		}
+		
+	}
+	
+	protected String getQuery(URI uri) {
+		String query = uri.getQuery() != null ? uri.getQuery() : "";
+		return query;
+	}
+	
 }

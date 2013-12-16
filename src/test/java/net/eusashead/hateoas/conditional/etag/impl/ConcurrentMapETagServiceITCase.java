@@ -1,12 +1,3 @@
-/**
- * Contains implementations of 
- * the ETagService and ETagRepository
- * implementations
- */
-/**
- * @author patrickvk
- *
- */
 package net.eusashead.hateoas.conditional.etag.impl;
 
 /*
@@ -28,3 +19,18 @@ package net.eusashead.hateoas.conditional.etag.impl;
  * limitations under the License.
  * %[license]
  */
+
+import net.eusashead.hateoas.conditional.service.ETagService;
+import net.eusashead.hateoas.conditional.service.impl.ConcurrentMapETagService;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class ConcurrentMapETagServiceITCase extends AbstractETagServiceITCase {
+	
+	public ETagService build() {
+		return new ConcurrentMapETagService();
+	}
+	
+}

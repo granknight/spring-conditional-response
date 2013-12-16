@@ -1,14 +1,4 @@
-/**
- * The ETagService and ETagRepository
- * interfaces and associated classes
- * used for storing ETag values between
- * requests in the ConditionalResponseHandlerInterceptor
- */
-/**
- * @author patrickvk
- *
- */
-package net.eusashead.hateoas.conditional.etag;
+package net.eusashead.hateoas.conditional.etag.impl;
 
 /*
  * #[license]
@@ -29,3 +19,25 @@ package net.eusashead.hateoas.conditional.etag;
  * limitations under the License.
  * %[license]
  */
+
+import java.io.IOException;
+
+import net.eusashead.hateoas.conditional.service.ETagService;
+import net.eusashead.hateoas.conditional.service.impl.SpymemcachedETagService;
+import net.spy.memcached.AddrUtil;
+import net.spy.memcached.MemcachedClient;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class SpymemcachedETagServiceITCase extends AbstractETagServiceITCase {
+
+	public ETagService build() throws IOException {
+		MemcachedClient c = new MemcachedClient(
+		        AddrUtil.getAddresses("localhost:11211"));
+		return new SpymemcachedETagService(c);
+	}
+	
+	
+}

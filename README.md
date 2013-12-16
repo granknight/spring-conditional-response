@@ -1,4 +1,4 @@
-Spring Conditional Response
+Spring Conditional Response [![Build Status](https://travis-ci.org/patrickvankann/spring-conditional-response.png)](https://travis-ci.org/patrickvankann/spring-conditional-response)
 ===========================
 
 Spring `HandlerInterceptor` for handling conditional `GET`, `PUT` and `DELETE` requests based on ETag headers in a non-intrusive way.
@@ -60,7 +60,7 @@ To use the `ConditionalResponseInterceptor`, register it in your Spring config a
 
 	    @Bean
 	    public ETagService eTagService() {
-		    return new ETagServiceImpl(new ConcurrentMapPathETagRepository());
+		    return new ConcurrentMapETagService();
 	    }
 
     }
@@ -73,3 +73,10 @@ It is available in the Sonatype repository on these coordinates. Look in Github 
         <artifactId>spring-spring-conditional-response</artifactId>
         <version>${version}</version>
     </dependency>
+
+##Releases
+###1.1.0
+1. Removed ETagRepository interface and implementations. Service classes will now need to implement persistence directly
+2. Created base class for ETagService and ETagService integration tests
+3. Added Travis CI configuration
+4. Renamed ETagService package

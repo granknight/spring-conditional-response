@@ -1,4 +1,4 @@
-package net.eusashead.hateoas.conditional.etag;
+package net.eusashead.hateoas.conditional.service;
 
 /*
  * #[license]
